@@ -1,5 +1,13 @@
+// Time Complexity : 0{logN)
+// Space Complexity : 0(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
 
 
+// Your code here along with comments explaining your approach in three sentences only
+Find Middle Element
+Once you find middle check if its neighbour are smaller if yes then return mid
+if mid element is not greater than neighbour apply binary search on greater side of middle element
 
 class Solution {
     public int findPeakElement(int[] nums) {
@@ -21,12 +29,12 @@ class Solution {
             {
                 return mid;
             }
-            // Moving it to higher side to find peak element
+            // Moving it to higher side to find peak element ie right side
             else if (nums[mid+1] > nums[mid])
             {
                 low = mid + 1;
             }
-            else {
+            else { // Move to higher side on left side if right side is not greater
                 high = mid - 1;
             }
         }
